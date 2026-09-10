@@ -1,0 +1,26 @@
+{
+  "name": "easy-ticket",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix Back-End\" \"npm run dev --prefix client\" \"npm run dev --prefix agence\" \"npm run dev --prefix admin\""
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "axios": "^1.13.2",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.5",
+    "dom-to-image-more": "^3.7.2",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
+    "lucide-react": "^0.562.0",
+    "modern-screenshot": "^4.6.8",
+    "nodemailer": "^10.0.1",
+    "react-hook-form": "^7.71.0",
+    "resend": "^6.26.0",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/dom-to-image": "^2.6.7",
+    "@types/file-saver": "^2.0.7"
+  }
+}

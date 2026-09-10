@@ -1,0 +1,193 @@
+/* css */
+.fileInput { display: none; }
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+/* ── Avatar ── */
+.avatarContainer {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.avatarContainer:hover { transform: scale(1.05); }
+
+.cameraOverlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #2563eb;
+  color: white;
+  padding: 4px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.userAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2563eb;
+  margin-bottom: 8px;
+}
+
+.profileImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+/* ── User info header ── */
+.userInfo {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--dd-border, #e5e5e5);
+  background: var(--dd-userinfo-bg, #f8fafc);
+  border-radius: 12px 12px 0 0;
+}
+
+.userName {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--dd-text, #1e293b);
+}
+
+/* ── Dropdown ── */
+.dropdown {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 260px;
+  max-width: 90vw;
+  background: var(--dd-bg, white);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--dd-border, #e5e5e5);
+  padding: 8px 0;
+  z-index: 100;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--dd-text, #1e293b);
+  text-decoration: none;
+}
+
+.dropdownItem:hover {
+  background: var(--dd-hover, #f2f2f2);
+}
+
+.dropdown hr {
+  border: none;
+  border-top: 1px solid var(--dd-border, #e5e5e5);
+  margin: 6px 0;
+}
+
+/* ── Buttons ── */
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  color: var(--nav-text, #1e293b);
+}
+.iconBtn:hover { background: var(--nav-hover, #f2f2f2); }
+
+.loginBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+/* ── Delete photo ── */
+/* Petit badge de suppression posé sur la miniature d'avatar (50px) : une
+   cible tactile pleine de 44px la recouvrirait presque entièrement, donc on
+   agrandit juste un peu — la photo reste aussi remplaçable en cliquant
+   directement dessus (handleAvatarClick), qui offre un chemin alternatif. */
+.deletePhotoBtn {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 6px;
+  border-radius: 50%;
+  border: 1px solid #fecaca;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.deletePhotoBtn:hover { background: #dc2626; color: white; transform: scale(1.1); }
+
+.userPhone {
+  font-size: 12px;
+  color: var(--dd-subtext, #64748b);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.langWrapper { position: relative; }
+.langDropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: var(--dd-bg, white);
+  color: var(--dd-text, #111);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  border: 1px solid var(--dd-border, #e5e5e5);
+  padding: 6px;
+  min-width: 140px;
+  z-index: 50;
+}
+.langItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--dd-text, #1e293b);
+}
+.langItem:hover { background: var(--dd-hover, #f1f5f9); }

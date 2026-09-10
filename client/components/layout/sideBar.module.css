@@ -1,0 +1,85 @@
+.sidebar {
+  
+  position: fixed;
+  top: 64px; /* 🔥 SOUS LA NAVBAR */
+  left: 0;
+  height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    to bottom,
+    #245bcf,
+    #245bcf,
+    #451dd8
+  );
+  color: white;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  border-radius: 0 12px 12px 0;
+  z-index: 40;
+}
+
+/* LARGEUR DESKTOP */
+.open {
+  width: 130px;
+}
+
+.closed {
+  width: 56px;
+}
+
+/* MOBILE : sidebar complètement cachée — remplacée par BottomNav */
+@media (max-width: 640px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* MENU HAUT */
+.menu {
+  flex: 1;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 6px;
+}
+
+/* MENU BAS (AIDE) */
+.bottomMenu {
+  padding: 6px;
+}
+
+/* ITEM */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.active {
+  background: white;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.active svg {
+  color: #2563eb;
+}
+
+/* MODE FERMÉ */
+.closed .item {
+  justify-content: center;
+}
+
+.closed .label {
+  display: none;
+}
